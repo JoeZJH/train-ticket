@@ -1,6 +1,6 @@
 #!/bin/bash
 echo -e "${1}"
-url="http://39.104.105.27:8181/cloudapp/v2/applications/isdeploy?app=${1}"
+url="http://39.104.105.27:8181/cloudapp/v2/applications/${1}?app=${2}"
 HTTP_CODE=`curl -X GET -o /dev/null -s --head -w "%{http_code}" "${url}"`
 if [ ${HTTP_CODE} -ne 200 ]
 then
