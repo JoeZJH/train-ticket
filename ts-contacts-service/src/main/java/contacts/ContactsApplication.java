@@ -24,7 +24,7 @@ public class ContactsApplication {
     public RestTemplate restTemplate(RestTemplateBuilder builder) {
         SimpleClientHttpRequestFactory requestFactory = new SimpleClientHttpRequestFactory();
         requestFactory.setConnectTimeout(3*1000);
-        reuqestFactory.setReadTimeout(3*1000);
+        requestFactory.setReadTimeout(3*1000);
         return new RestTemplate(requestFactory);
         // return builder.build();
 
