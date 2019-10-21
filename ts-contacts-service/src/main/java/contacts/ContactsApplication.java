@@ -21,6 +21,11 @@ public class ContactsApplication {
 
     @Bean
     public RestTemplate restTemplate(RestTemplateBuilder builder) {
-        return builder.build();
+        SimpleClientHttpRequestFactory requestFactory = new SimpleClientHttpRequestFactory();
+        requestFactory.setConnectTimeout(3*1000);
+        reuqestFactory.setReadTimeout(3*1000);
+        return new RestTemplate(requestFactory);
+        // return builder.build();
+
     }
 }
